@@ -1,0 +1,60 @@
+:root{
+   --white:aqua;
+   --black:black;
+   --orange:orange;   
+}
+.white{
+   background-color:var(--white);
+   width: 50px;
+   height: 50px;
+   display: inline-block;
+   margin: 5px;
+}
+.white:hover,
+.black:hover{
+   background-color:var(--orange);
+}
+.black{
+   width: 50px;
+   height: 50px;
+   background-color: var(--black);
+   display: inline-block;
+   margin: 5px;
+}
+
+.spiner{
+   position: relative;
+   width: 80px;
+   height: 80px;
+   border-radius: 80%;
+
+}
+.spiner::before,
+.spiner::after{
+   content: "";
+   position: absolute;
+   border-radius: inherit;
+}
+.spiner::before{
+   width: 100%;
+   height: 100%;
+   background-image:linear-gradient(
+      0deg, #ff00cc 0%,
+      #192EFF 100%);
+   animation:spin .7s infinite linear;
+}
+/*
+.spiner::after{
+   width: 85%;    
+   height: 85%;
+   background-color: #151515;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}*/
+@keyframes spin{
+   to{
+      transform: rotate(360deg);
+   }
+}
+
